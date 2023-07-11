@@ -1,5 +1,6 @@
 package dev.scjoao
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,11 +17,18 @@ class MainActivity : AppCompatActivity() {
         val etNome = findViewById<EditText>(R.id.etNome)
 
         btEnviar.setOnClickListener{
-            if (etNome.text.isEmpty()){
+            if (etNome.text.isBlank()){
                 etNome.error = "Digite o nome!"
             }else{
                 tvResultado.text = etNome.text
             }
+        }
+
+        val btAbrirNovaTela = findViewById<Button>(R.id.btAbrirNovaTela)
+
+        btAbrirNovaTela.setOnClickListener{
+            val novaTelaIntent = Intent(this, ResultadoActivity::class.java)
+            startActivity(novaTelaIntent)
         }
     }
 }
