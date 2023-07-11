@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         btAbrirNovaTela.setOnClickListener{
             val novaTelaIntent = Intent(this, ResultadoActivity::class.java)
+
+            val nomeDigitado = etNome.text.toString()
+
+            novaTelaIntent.putExtra("NOME_DIGITADO", nomeDigitado)
+
             startActivity(novaTelaIntent)
         }
     }
