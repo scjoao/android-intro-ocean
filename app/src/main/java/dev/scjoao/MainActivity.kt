@@ -18,8 +18,9 @@ class MainActivity : AppCompatActivity() {
         btEnviar.setOnClickListener{
             if (etNome.text.isEmpty()){
                 etNome.error = "Digite o nome!"
+            }else{
+                tvResultado.text = etNome.text
             }
-            tvResultado.text = etNome.text
         }
     }
 }
